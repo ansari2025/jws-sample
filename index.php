@@ -4,11 +4,11 @@
 require 'token.php';
 
 // Define a key
-const KEY = 'thisisademokey';
+const KEY = 'testkey';
 
 // Generate token
-$token = Token::Sign(['id' => 'demoid'], KEY, 60*5);
+$token = token::Sign(['id' => 'std_id'],['stu_type' => 'stu_type'], KEY, 60*5);
 
 
 // Vefity token
-$payload = Token::Verify($token, KEY);
+$payload = token::Verify($token, KEY);
