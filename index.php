@@ -3,8 +3,8 @@
 require 'Token.php';
 
 $servername = "localhost";
-$db="siliconc_db";
-$username = "siliconc_user";
+$db="dbs";
+$username = "user";
 $password = "6+pBv6!f3yyV";
 
 echo "<br><br>";
