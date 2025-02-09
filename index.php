@@ -28,12 +28,12 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 echo $row["name"];  
 echo " === ";
 
-echo $row["type"]; echo "<br><br>";
+echo $type=$row["type"]; echo "<br><br>";
 }
 mysqli_close($conn);
 
 // Generate token
-$token = Token::Sign(['stu_type' => 'type'], $row["type"], 60*5);
+$token = Token::Sign(['stu_type' => $type], $row["type"], 60*5);
 
 
 echo $token;
