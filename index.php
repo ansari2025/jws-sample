@@ -26,6 +26,7 @@ $result = mysqli_query($conn,$sql);
 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 
 echo $row["name"];  
+$uid=$row["id"];  
 echo " === ";
 
 echo $type=$row["type"]; echo "<br><br>";
@@ -33,7 +34,7 @@ echo $type=$row["type"]; echo "<br><br>";
 mysqli_close($conn);
 
 // Generate token
-$token = Token::Sign(['stu_type' => $type], $row["type"], 60*5);
+$token = Token::Sign(['uid' => $uid], $row["type"], 60*5);
 
 
 echo $token;
